@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* 1. Configuration and helpers */
+@use "abstracts/variables";
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/placeholder";
+
+/* 2. Vendors */
+@use "vendors/bootstrap";
+
+/* 3. Base stuff */
+@use "base/base";
+
+// 4. Layout-related sections
+@use "layout/header";
+@use "layout/navigation";
+@use "layout/sidebar";
+@use "layout/forms";
+@use "layout/footer";
+
+// 5. Components
+@use "components/alert";
+@use "components/button";
+@use "components/carousel";
+
+// 6. Page-specific styles
+@use "pages/home";
+
+// 7. Themes
+@use "themes/default";
+@use "themes/dark";
