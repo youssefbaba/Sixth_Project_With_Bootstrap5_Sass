@@ -20,8 +20,9 @@
 @use "layout/footer";
 
 // 5. Components
-@use "components/alert";
 @use "components/button";
+@use "components/head-section";
+@use "components/alert";
 @use "components/carousel";
 
 // 6. Page-specific styles

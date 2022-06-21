@@ -1,0 +1,51 @@
+@use "../../node_modules/sass-rem/rem"as *;
+/* Color styles */
+$background-color:#FAFAFA;
+$color-asset-1 :#36858d;
+$color-asset-2 :#F0E2CE;
+$color-black-50 :rgba(2, 22, 51, 0.5);
+$emptiness : #fcfcfc;
+
+
+/* Font Weight */
+$font-weight-semibold : 600;
+
+
+/* letter-spacing */
+$letter-spacing: 0.01rem;
+
+
+/*  Font size  */
+$headline-1: 4.38rem;
+$headline-2: 2.5rem;
+$subheadline-1: 1.5rem;
+$text-icon: 1.25rem;
+$headline-3: 1.25rem;
+$text-small: 0.88rem;
+$headline-4: 1.5rem;
+$sublheadline-2: 1.25rem;
+$headline-1-mobile: 1.75rem;
+$subheadline-1-mobile: 0.81rem;
+$text-icon-mobile: 0.88rem;
+$headline-2-mobile: 1.5rem;
+$tittle-card-mobile: 1rem;
+$subtittle-card-mobile: 0.75rem;
+$headline-3-mobile: 0.88rem;
+
+
+/* Border Radius */
+$border-radius-5 : rem(5px);
+
+
+$gap-section : rem(100px);
+
+
+/* Map For Creating Background Colors */
+$map-bg-colors:(background-color:$background-color,
+  emptiness : $emptiness,
+);
+
+
+/* Map For Creating Text Colors */
+$map-text-colors:(color-black-50:$color-black-50,
+)

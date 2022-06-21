@@ -1,0 +1,53 @@
+@use "../abstracts/variables"as *;
+@use "../vendors/bootstrap"as *;
+@use "sass:math"as *;
+@use "../../node_modules/sass-rem/rem"as *;
+
+/* Start The Head Section Component */
+.head-section {
+  .title {
+    font: {
+      size: $headline-2-mobile;
+    }
+
+    line: {
+      height: div(rem(36px), $headline-2-mobile)
+    }
+
+    letter: {
+      spacing: $letter-spacing;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font: {
+        size: $headline-2;
+      }
+
+      line: {
+        height: div(rem(55px), $headline-2)
+      }
+    }
+  }
+
+  .description {
+    font: {
+      size: $subtittle-card-mobile;
+    }
+
+    line: {
+      height: div(rem(20px), $subtittle-card-mobile);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font: {
+        size: $text-small;
+      }
+
+      line: {
+        height: div(rem(24px), $text-small);
+      }
+    }
+  }
+}
+
+/* End The Head Section Component */

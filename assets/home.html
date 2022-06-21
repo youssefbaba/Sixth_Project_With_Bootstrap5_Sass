@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sixth_Project_With_Bootstrap5_Sass</title>
-  <!-- Stylesheet Css -->
+  <!-- Main Stylesheet Css -->
   <link rel="stylesheet" href="css/home.css">
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,73 +15,412 @@
     rel="stylesheet">
   <!-- Font Awesome Css -->
   <link rel="stylesheet" href="css/all.min.css">
+  <!-- Owl Carousel Css -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- Theme Default  Owm Carousel  -->
+  <link rel="stylesheet" href="css/owl.theme.default.css">
 </head>
 
-<body>
+<!-- <body class="bg-background-color"> -->
 
-  <!-- Test For Set Up Project -->
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
+<body class="bg-background-color">
+  <!-- Start The Header Section  -->
+  <header class="header position-relative">
+    <!-- Start Navigation Bar -->
+    <nav class="navbar navbar-expand-lg position-absolute w-100">
+      <div class="container">
+        <a class="navbar-brand col-lg-2 p-0" href="#">
+          <img src="media/imgs/header/logo.svg" alt="logo">
+        </a>
+        <button class="navbar-toggler shadow-none p-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasOne" aria-controls="offcanvasOne">
+          <i class="fa-solid fa-bars text-white"></i>
         </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin
-          adds the appropriate classes that we use to style each element. These classes control the overall appearance,
-          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just about any HTML can go within the
-          <code>.accordion-body</code>, though the transition does limit overflow.
+        <div class="offcanvas offcanvas-start col-lg-8 offset-lg-2 bg-background-color" tabindex="-1" id="offcanvasOne"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-black" id="offcanvasExampleLabel">Menu</h5>
+            <button type="button" class="btn-close text-black shadow-none" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav col-lg-6 align-items-lg-center ms-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link active text-capitalize text-black fw-bold position-relative" aria-current="page"
+                  href="#">browse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase text-black position-relative" href="#">blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase text-black position-relative" href="#">write review</a>
+              </li>
+            </ul>
+            <form class="form d-lg-flex align-items-lg-center col-lg-6 justify-content-lg-end position-relative">
+              <a href="#"
+                class="nav-link text-capitalize text-black text-decoration-none px-0 px-lg-2 position-relative">login</a>
+              <a href="#"
+                class="nav-link text-uppercase special-hover text-primary text-decoration-none px-0 px-lg-2 position-relative">sign
+                up</a>
+              <button class="btn btn-primary text-white text-uppercase fw-smb rounded-5 mt-2 mt-lg-0 ms-lg-2"
+                type="submit">
+                register pro
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navigation Bar -->
+    <!-- Start The Landing Section  -->
+    <section class="landing">
+      <div class="container">
+        <div class="row">
+          <div class="content col-8 col-lg-7">
+            <div>
+              <h1 class="title text-capitalize fw-bold text-black mb-0">
+                solve your problem with us professionals in their field
+              </h1>
+              <p class="description text-color-black-50 mt-3 mb-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In aspernatur itaque quos est dolorum eius
+                expedita libero cumque repellat neque cum consequatur nisi sunt voluptatum amet inventore odio, impedit
+                laborum?
+              </p>
+            </div>
+            <div class="buttons d-none d-lg-block">
+              <a class="btn btn-primary text-white text-uppercase fw-smb rounded-5">
+                hire a pro
+              </a>
+              <a class="btn btn-outline-primary text-uppercase fw-smb rounded-5">
+                find customers
+              </a>
+            </div>
+          </div>
+          <div class="image col-4 col-lg-5 d-flex justify-content-end">
+            <img src="media/imgs/header/design_02.png" alt="Design" class="img-fluid d-lg-none">
+            <img src="media/imgs/header/image_hero.png" alt="image_hero" class="img-fluid d-none d-lg-block">
+          </div>
+          <div class="buttons col-lg-6 d-lg-none">
+            <a class="btn btn-primary text-white text-uppercase fw-smb rounded-5">
+              hire a pro
+            </a>
+            <a class="btn btn-outline-primary text-uppercase fw-smb rounded-5">
+              find customers
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End The Landing Section  -->
+  </header>
+  <!-- End The Header Section  -->
+  <!-- Start The Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="services-content bg-white position-relative">
+        <div class="head-section text-center">
+          <h3 class="title col-8 text-black fw-bold text-capitalize mx-auto">Here is what you can do on Horvic </h3>
+        </div>
+        <div class="row">
+          <!-- Start Service 1 -->
+          <div class="col-6 col-lg-3 text-center">
+            <span class="icon d-inline-block rounded-circle position-relative bg-primary mb-3">
+              <img src="media/imgs/services/IC_discovery_design.svg" alt="discovery_design"
+                class="center-position-absolute">
+            </span>
+            <div class="text-icon text-color-black-50 d-flex flex-column align-items-center text-capitalize">
+              <span>discover</span>
+              <span>design ideas</span>
+            </div>
+          </div>
+          <!-- End Service 1 -->
+          <!-- Start Service 2 -->
+          <div class="col-6 col-lg-3 text-center">
+            <span class="icon d-inline-block rounded-circle position-relative bg-primary mb-3">
+              <img src="media/imgs/services/IC_Free_Insurance_Coverage.svg" alt="IC_Free_Insurance_Coverage"
+                class="center-position-absolute">
+            </span>
+            <div class="text-icon text-color-black-50 d-flex flex-column align-items-center text-capitalize">
+              <span>free insurance</span>
+              <span>coverage</span>
+            </div>
+          </div>
+          <!-- End Service 2 -->
+          <!-- Start Service 3 -->
+          <div class="col-6 col-lg-3 text-center">
+            <span class="icon d-inline-block rounded-circle position-relative bg-primary mb-3">
+              <img src="media/imgs/services/IC_Day.svg" alt="IC_Day" class="center-position-absolute">
+            </span>
+            <div class="text-icon text-color-black-50 d-flex flex-column align-items-center text-capitalize">
+              <span>same day/next day</span>
+              <span>service available</span>
+            </div>
+          </div>
+          <!-- End Service 3 -->
+          <!-- Start Service 4 -->
+          <div class="col-6 col-lg-3 text-center">
+            <span class="icon d-inline-block rounded-circle position-relative bg-primary mb-3">
+              <img src="media/imgs/services/suggest_pros.svg" alt="suggest_pros" class="center-position-absolute">
+            </span>
+            <div class="text-icon text-color-black-50 text-capitalize">
+              <span>suggest pros</span>
+            </div>
+          </div>
+          <!-- End Service 4 -->
+        </div>
+        <img src="media/imgs/services/graphic_01.png" alt="graphic-one" class="design-zero position-absolute start-0">
+      </div>
+    </div>
+  </section>
+  <!-- End The Services Section -->
+  <!-- Start The Popular Services Section -->
+  <section class="popular-services position-relative">
+    <div class="container">
+      <div class="head-section text-center">
+        <h3 class="title col-7 text-black fw-bold text-capitalize mx-auto">popular services in your area</h3>
+      </div>
+    </div>
+    <div class="container-fluid container-lg position-relative">
+      <div class="owl-carousel owl-theme">
+        <div class="item d-flex h-100 px-lg-2 pt-lg-2">
+          <div
+            class="card bg-transparent border-0 position-relative overflow-hidden d-flex flex-column align-items-stretch">
+            <img src="media/imgs/popular-services/bathroom-remodeling.jpg" class="card-image card-img-top"
+              alt="bathroom-remodeling">
+            <div class="card-body">
+              <h4 class="card-title fw-smb text-black">bathroom remodeling</h4>
+              <p class="card-text text-black-50 mb-0">
+                we will make the old bathroom even better
+                with this service, and we are the greatest
+                among them
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item d-flex h-100 px-lg-2 pt-lg-2">
+          <div
+            class="card bg-transparent border-0 position-relative overflow-hidden d-flex flex-column align-items-stretch">
+            <img src="media/imgs/popular-services/house-cleaning.jpg" class="card-image card-img-top"
+              alt="house-cleaning">
+            <div class="card-body">
+              <h5 class="card-title fw-smb text-black">house cleaning</h5>
+              <p class="card-text text-black-50 mb-0">
+                Home is the most comfortable place to be after work. then we will provide good results at your
+                convenience
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item d-flex h-100 px-lg-2 pt-lg-2">
+          <div
+            class="card bg-transparent border-0 position-relative overflow-hidden d-flex flex-column align-items-stretch">
+            <img src="media/imgs/popular-services/genereal-contracting.jpg" class="card-image card-img-top"
+              alt="genereal-contracting">
+            <div class="card-body">
+              <h5 class="card-title fw-smb text-black">genereal contracting</h5>
+              <p class="card-text text-black-50 mb-0">
+                however good results are the greatest thing in any job. eat we are ready to serve anything with our
+                field
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="d-block text-decoration-none position-relative">
+        <h3 class="bottom-title text-primary fw-normal text-uppercase text-center lh-lg mb-0">see all services</h3>
+      </a>
+      <img src="media/imgs/popular-services/graphic_01.png" alt="graphic-one"
+        class="design-one position-absolute d-lg-none">
+    </div>
+    <img src="media/imgs/popular-services/graphic_01.png" alt="graphic-one"
+      class="design-two position-absolute d-none d-lg-block top-0 start-0">
+    <img src="media/imgs/popular-services/graphic_02.png" alt="graphic-two"
+      class="design-three position-absolute d-none d-lg-block  bottom-0 end-0">
+  </section>
+  <!-- End The Popular Services Section -->
+  <!-- Start The Performance Section  -->
+  <section class="performance">
+    <div class="container">
+      <div class="d-none d-lg-block mb-3 position-relative">
+        <img src="media/imgs/performance/image_05.png" alt="image_five" class="img-fluid d-block ms-auto">
+        <img src="media/imgs/performance/image_06.png" alt="image_six"
+          class="img-fluid d-block position-absolute top-0 start-50 translate-middle-x">
+      </div>
+      <div class="row">
+        <div class="col-lg-6 container-images order-lg-last mx-auto me-lg-0">
+          <img src="media/imgs/performance/image_01.png" alt="image_one"
+            class="design-one d-block position-relative ms-2 d-lg-none">
+          <div class="image p-2">
+            <!-- <img src="media/imgs/performance/image_02.jpg" alt="image_two" class="design-two"> -->
+            <img src="media/imgs/performance/test.jpg" alt="image_two" class="design-two">
+          </div>
+          <img src="media/imgs/performance/image_03.png" alt="image_three"
+            class="design-three d-block position-relative ms-auto d-lg-none">
+          <img src="media/imgs/performance/image_04.png" alt="image_four"
+            class="design-four position-relative d-none d-lg-block">
+        </div>
+        <div class="col-lg-5 content">
+          <div class="head-section text-center text-lg-start">
+            <h3 class="title col-10 col-lg-12 text-black fw-bold text-capitalize mx-auto">
+              Why should you hire us?
+            </h3>
+            <p class="description text-color-black-50">
+              Not all plumbing companies can guarantee the price up
+              front and see how many professions we provide so
+              that your problem is solved
+            </p>
+          </div>
+          <ul class="list col-10 col-lg-12 list-unstyled mx-auto mb-0">
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>home cleaning</span>
+            </li>
+            <span class="vertical-dashed-line d-inline-block"></span>
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>full house removals</span>
+            </li>
+            <span class="vertical-dashed-line d-inline-block"></span>
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>items removals</span>
+            </li>
+            <span class="vertical-dashed-line d-inline-block"></span>
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>furniture assembly</span>
+            </li>
+            <span class="vertical-dashed-line d-inline-block"></span>
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>handyman</span>
+            </li>
+            <span class="vertical-dashed-line d-inline-block"></span>
+            <li class="text-capitalize position-relative text-black d-flex  align-items-center">
+              <span class="text-dark fw-bold bg-white rounded-circle center-flex"></span>
+              <span>home gardening</span>
+            </li>
+          </ul>
+          <div class="center-flex">
+            <a class="btn btn-primary text-white text-uppercase fw-smb rounded-5">
+              hire a pro
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-          aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin
-          adds the appropriate classes that we use to style each element. These classes control the overall appearance,
-          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just about any HTML can go within the
-          <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-        data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin
-          adds the appropriate classes that we use to style each element. These classes control the overall appearance,
-          as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
-          overriding our default variables. It's also worth noting that just about any HTML can go within the
-          <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
+  </section>
+  <!-- End The Performance Section  -->
+
+
+
+
+
+
+
+
+
+
+  <div style="border: 1px solid red;">
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
   </div>
-  <i class="fa-brands fa-youtube fa-2x text-primary"></i>
-
   <!-- Bootstrap Js -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome Js -->
   <script src="js/all.min.js"></script>
+  <!-- JQuery -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <!-- Owl Carousel Js -->
+  <script src="js/owl.carousel.min.js"></script>
+  <!-- Main Js -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+@use "../abstracts/variables"as *;
+
+/* Mixin For Generate Background Colors And Text Colors */
+@mixin gen-props($prefix, $property) {
+
+  @if ($prefix=="bg") and ($property=="background") {
+
+    @each $color-name,
+    $color in $map-bg-colors {
+      .#{$prefix}-#{$color-name} {
+        #{$property}: $color
+      }
+    }
+  }
+
+  @else if ($prefix=="text") and ($property=="color") {
+
+    @each $color-name,
+    $color in $map-text-colors {
+      .#{$prefix}-#{$color-name} {
+        #{$property}: $color
+      }
+    }
+  }
+}
+
+/* Mixin For Transition */
+@mixin transition-mixin($properties...) {
+  transition: $properties;
+}

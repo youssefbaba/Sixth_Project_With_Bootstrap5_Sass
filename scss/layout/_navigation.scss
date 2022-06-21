@@ -1,0 +1,111 @@
+@use "../abstracts/variables"as *;
+@use "../abstracts/mixins"as *;
+@use "../../node_modules/sass-rem/rem"as *;
+@use "../vendors/bootstrap"as *;
+@use "sass:math"as *;
+
+/* Start The Navigation Section */
+.header {
+  .navbar {
+    padding: {
+      top: rem(28px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: {
+        top: rem(36px);
+        bottom: rem(56px);
+      }
+    }
+
+    &-nav {
+      @include media-breakpoint-up(lg) {
+        gap: 2rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        gap: 3rem;
+      }
+    }
+
+    .nav-link,
+    .special-hover {
+      &:before {
+        content: "";
+        position: absolute;
+        height: rem(1px);
+        width: 0;
+        bottom: 0;
+        left: 0;
+        @include transition-mixin(width 0.3s ease);
+
+        @include media-breakpoint-up(lg) {
+          left: rem(11px);
+        }
+      }
+
+      &:hover {
+        &::before {
+          width: rem(30px);
+        }
+      }
+    }
+
+    .nav-link {
+      font: {
+        size: $text-small;
+      }
+
+      line: {
+        height: div(rem(24px), $text-small);
+      }
+
+      &:before {
+        background-color: $black;
+      }
+    }
+
+    .form {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: rem(32px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+
+        background: {
+          color: $color-asset-2;
+        }
+      }
+
+      gap: 1.5rem;
+
+      .special-hover {
+        &::before {
+          background-color: $primary !important;
+        }
+      }
+
+      .btn {
+        padding: 0.2rem 0.5rem;
+
+        @include media-breakpoint-up(lg) {
+          padding: 0.25rem 0.75rem;
+        }
+
+        font: {
+          size: $text-small;
+        }
+
+        line: {
+          height: div(rem(32px), $text-small);
+        }
+      }
+    }
+  }
+}
+
+
+/* End The Navigation Section */

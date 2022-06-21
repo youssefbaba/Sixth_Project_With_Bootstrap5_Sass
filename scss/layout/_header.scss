@@ -1,0 +1,127 @@
+@use "../abstracts/variables"as *;
+@use "../vendors/bootstrap"as *;
+@use "../../node_modules/sass-rem/rem"as *;
+@use "sass:math"as *;
+
+/* Start The Landing Section */
+.header {
+  .landing {
+    @include media-breakpoint-up(lg) {
+      padding: {
+        top: rem(134.137px);
+      }
+    }
+
+    .content {
+      padding: {
+        top: rem(120px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: {
+          top: rem(61px);
+        }
+      }
+
+      .title {
+        font: {
+          size: $headline-1-mobile;
+        }
+
+        line: {
+          height: div(rem(38px), $headline-1-mobile);
+        }
+
+        letter: {
+          spacing: $letter-spacing;
+        }
+
+        @include media-breakpoint-up(lg) {
+          font: {
+            size: $headline-1;
+          }
+
+          line: {
+            height: div(rem(89px), $headline-1);
+          }
+        }
+      }
+
+      .description {
+        font: {
+          size: $subheadline-1-mobile;
+        }
+
+        line: {
+          height: div(rem(21px), $subheadline-1-mobile);
+        }
+
+        @include media-breakpoint-up(lg) {
+          font: {
+            size: $subheadline-1;
+          }
+
+          line: {
+            height: div(rem(34px), $subheadline-1);
+          }
+
+          margin: {
+            top: rem(20px) !important;
+          }
+        }
+      }
+    }
+
+    .image {
+      img {
+        margin: {
+          right: -0.75rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          margin: {
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      font: {
+        size: 0;
+      }
+
+      margin: {
+        top: rem(46px);
+      }
+
+      @include media-breakpoint-up(sm) {
+        margin: {
+          top: 0;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: {
+          top: rem(44px);
+        }
+      }
+
+      a {
+        &:first-of-type {
+          margin: {
+            right: rem(18px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            margin: {
+              right: rem(44px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* End The Landing Section */
