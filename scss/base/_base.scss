@@ -1,20 +1,19 @@
 @use "../abstracts/variables"as *;
 @use "../abstracts/mixins"as *;
 
+/* Font Family For Body */
 base {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Font Weight Semi-Bold */
 .fw-smb {
   font: {
     weight: $font-weight-semibold;
   }
 }
 
-.rounded-5 {
-  border-radius: $border-radius-5;
-}
-
+/* Center Element Using Position Absolute */
 .center-position-absolute {
   position: absolute;
   top: 50%;
@@ -22,11 +21,13 @@ base {
   transform: translate(-50%, -50%)
 }
 
+/* Center Element Using Flex Box */
 .center-flex {
   display: flex;
   align-items: center;
   justify-content: center
 }
+
 
 @include gen-props("bg", "background");
 @include gen-props("text", "color");

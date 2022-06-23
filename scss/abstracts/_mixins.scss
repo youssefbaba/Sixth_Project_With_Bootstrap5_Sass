@@ -28,3 +28,9 @@
 @mixin transition-mixin($properties...) {
   transition: $properties;
 }
+
+/* Filter  Mixin */
+@mixin backdrop-filter($filter-type, $filter-amount) {
+
+  backdrop-filter: #{$filter-type}(#{$filter-amount});
+}

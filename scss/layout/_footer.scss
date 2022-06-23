@@ -1,0 +1,124 @@
+@use "../abstracts/variables"as *;
+@use "../vendors/bootstrap"as *;
+@use "../../node_modules/sass-rem/rem"as *;
+@use "sass:math"as *;
+
+/* Start The Footer Layout */
+.footer {
+  .logo {
+    margin: {
+      bottom: rem(80px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: {
+        bottom: rem(112px);
+      }
+    }
+  }
+
+  .title {
+    font: {
+      size: $tittle-card-mobile;
+    }
+
+    line: {
+      height: div(1.5rem, $tittle-card-mobile);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font: {
+        size: $headline-4;
+      }
+
+      line: {
+        height: div(2rem, $headline-4);
+      }
+
+      margin: {
+        bottom: rem(28px) !important;
+      }
+    }
+  }
+
+  .company {
+    .list-links {
+      margin: {
+        bottom: rem(104px);
+      }
+    }
+  }
+
+  .list-links {
+    gap: rem(28px 0);
+
+    &:nth-of-type(4) {
+      margin: {
+        bottom: rem(104px);
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      gap: rem(36px 0);
+    }
+
+    .link {
+      font: {
+        size: $subtittle-card-mobile;
+      }
+
+      line: {
+        height: div(1.25rem, $subtittle-card-mobile);
+      }
+
+      @include media-breakpoint-up(lg) {
+        font: {
+          size: $sublheadline-2;
+        }
+
+        line: {
+          height: div(2rem, $sublheadline-2);
+        }
+      }
+    }
+  }
+
+  .media-copyright {
+    gap: rem(28px) 0;
+
+    margin: {
+      top: rem(56px);
+      bottom: rem(44px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      gap: 0;
+
+      margin: {
+        top: rem(104px);
+        bottom: rem(80px);
+      }
+    }
+
+    .media {
+      gap: 0 1.25rem;
+
+      .icon {
+        width: rem(40px);
+        height: rem(40px);
+      }
+    }
+
+    .copyright {
+      font: {
+        size: $text-small;
+      }
+
+      line: {
+        height: div(1.5rem, $text-small);
+      }
+    }
+  }
+}
+
+/* End The Footer Layout */

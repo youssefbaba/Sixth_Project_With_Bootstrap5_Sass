@@ -1,4 +1,5 @@
 @use "../abstracts/variables"as *;
+@use "../abstracts/mixins"as *;
 @use "../vendors/bootstrap"as *;
 @use "../../node_modules/sass-rem/rem"as *;
 @use "sass:math"as *;
@@ -43,10 +44,6 @@
         top: rem(41px);
         bottom: rem(36px);
       }
-    }
-
-    border: {
-      radius: calc($border-radius-5 * 2);
     }
 
     box: {
@@ -135,7 +132,7 @@
 
       .owl-item {
         &:not(.center) {
-          .item {
+          .card {
             background: {
               color: $emptiness;
             }
@@ -143,7 +140,7 @@
         }
 
         &.center {
-          .item {
+          .card {
             background: {
               color: $white;
             }
@@ -229,9 +226,7 @@
     }
 
     .item {
-      border: {
-        radius: calc($border-radius-5 * 2);
-      }
+      @include backdrop-filter(blur, 1rem);
 
       padding: {
         top: rem(6px);
@@ -247,12 +242,6 @@
       }
 
       .card {
-        &-image {
-          border: {
-            radius: calc($border-radius-5 * 2);
-          }
-        }
-
         &-body {
           padding: {
             top: rem(20px);
@@ -345,7 +334,19 @@
   @include media-breakpoint-up(lg) {
     padding: {
       top: calc($gap-section * 2);
-      bottom: calc($gap-section * 2);
+      bottom: 0;
+    }
+  }
+
+  .dots {
+    transform: translateY(100%);
+
+    @include media-breakpoint-up(lg) {
+      bottom: initial;
+      right: initial;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
 
@@ -380,13 +381,7 @@
     }
 
     .image {
-      background: {
-        color: rgba($white, 0.8);
-      }
-
-      border: {
-        radius: calc($border-radius-5 * 2);
-      }
+      @include backdrop-filter(blur, rem(10px));
 
       @include media-breakpoint-up(lg) {
         padding: rem(18px 13px) !important;
@@ -395,14 +390,12 @@
       .design-two {
         width: 100%;
         height: 100%;
+        filter: drop-shadow(0px 20px 50px rgba(5, 9, 19, 0.1));
 
         @include media-breakpoint-down(lg) {
           aspect-ratio: 0.9;
         }
 
-        border: {
-          radius: calc($border-radius-5 * 2);
-        }
       }
     }
   }
@@ -510,3 +503,727 @@
 }
 
 /* End The Performance Section */
+/* Start The Best Rated Section */
+.best-rated {
+  .head-section {
+    .description {
+      margin: {
+        top: 0.75rem;
+        bottom: rem(80px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: {
+          top: 1.25rem;
+          bottom: rem(25px);
+        }
+      }
+    }
+  }
+
+  .owl-carousel {
+    @include media-breakpoint-up(lg) {
+      padding: {
+        top: rem(115px);
+        bottom: rem(123px);
+        right: rem(85px);
+      }
+
+      width: calc(calc(8 / 12) * 100%) !important;
+    }
+
+    .owl-stage {
+      display: flex;
+
+      .owl-item {
+        &:not(.center) {
+          .card {
+            background: {
+              color: $emptiness;
+            }
+          }
+        }
+
+        &.center {
+          .card {
+            background: {
+              color: $white;
+            }
+
+            box: {
+              shadow: 0px 12px 35px rgba(5, 9, 19, 0.05);
+            }
+          }
+        }
+      }
+    }
+
+    .owl-nav {
+
+      .owl-prev,
+      .owl-next {
+        top: rem(calc(115px - 39px));
+        transform: translateY(-100%);
+        margin: 0;
+        position: absolute;
+
+        &:hover {
+          background: transparent;
+
+          svg {
+            transform: scale(1.33);
+
+            path {
+              fill: $black;
+            }
+          }
+        }
+
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          vertical-align: middle !important;
+
+          path {
+            fill: $color-black-50;
+          }
+        }
+      }
+
+      .owl-prev {
+        right: rem(calc(85px));
+      }
+
+      .owl-next {
+        right: rem(calc(85px + 24px + 32px));
+      }
+
+      @include media-breakpoint-up(lg) {
+        display: inline-flex !important;
+      }
+    }
+
+    .owl-dots {
+      display: flex;
+      gap: rem(23px);
+      justify-content: center;
+
+      margin: {
+        top: rem(56px) !important;
+      }
+
+      .owl-dot {
+        span {
+          margin: 0 !important;
+        }
+
+        &:hover,
+        &.active {
+          span {
+            background: {
+              color: $primary !important;
+            }
+          }
+        }
+      }
+    }
+
+    .item {
+      @include backdrop-filter(blur, 1rem);
+
+      padding: rem(6px);
+
+      @include media-breakpoint-up(lg) {
+        padding: rem(10px);
+      }
+    }
+
+    .card {
+      &-body {
+        padding: {
+          top: 1.25rem;
+          right: 0.75rem;
+          left: 0.75rem;
+          bottom: rem(30px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          padding: {
+            top: 2rem;
+            bottom: rem(40px);
+          }
+        }
+
+        .creator {
+          gap: 0 0.5rem;
+
+          @include media-breakpoint-up(lg) {
+            margin: {
+              left: 0.75rem !important;
+            }
+
+            gap: 0 1.5rem;
+          }
+
+          &-image {
+            width: rem(60px);
+            height: rem(60px);
+          }
+
+          &-name {
+            font: {
+              size: $tittle-card-mobile;
+            }
+
+            line: {
+              height: div(rem(14px), $tittle-card-mobile);
+            }
+
+            margin: {
+              bottom: rem(5px);
+            }
+
+            @include media-breakpoint-up(lg) {
+              font: {
+                size: $headline-4;
+              }
+
+              line: {
+                height: div(rem(36px), $headline-4);
+              }
+            }
+          }
+
+          &-info {
+            font: {
+              size: $subtittle-card-mobile;
+            }
+
+            line: {
+              height: div(rem(20px), $subtittle-card-mobile);
+            }
+
+            @include media-breakpoint-up(lg) {
+              font: {
+                size: $sublheadline-2;
+              }
+
+              line: {
+                height: div(rem(30px), $sublheadline-2);
+              }
+            }
+
+          }
+        }
+
+        .raiting-guarantee {
+          gap: 0 rem(52px);
+
+          margin: {
+            top: rem(21px);
+            bottom: rem(17px);
+            left: rem(10px);
+          }
+
+          @include media-breakpoint-up(xl) {
+            gap: 0.5rem 0;
+            margin: 0;
+          }
+
+          .raiting {
+            span {
+              font: {
+                size: $tittle-card-mobile;
+              }
+
+              line: {
+                height: div(1.5rem, $tittle-card-mobile);
+              }
+
+              margin: {
+                left: rem(5px);
+              }
+
+              @include media-breakpoint-up(lg) {
+                font: {
+                  size: $headline-4;
+                }
+
+                line: {
+                  height: div(rem(36px), $headline-4);
+                }
+              }
+            }
+          }
+
+          .guarantee {
+            span {
+              font: {
+                size: $text-small;
+              }
+
+              line: {
+                height: div(1.5rem, $text-small);
+              }
+
+              margin: {
+                left: 0.25rem;
+              }
+
+            }
+          }
+        }
+
+        .latest-review-comment {
+          padding: {
+            top: rem(22px);
+            right: rem(13px);
+            bottom: rem(23px);
+            left: rem(13px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            padding: {
+              top: rem(13px);
+              right: rem(32px);
+              bottom: rem(32px);
+              left: rem(24px);
+            }
+          }
+
+          @include media-breakpoint-up(xl) {
+            margin: {
+              top: rem(41px);
+            }
+          }
+
+          .title {
+            font: {
+              size: $headline-3-mobile;
+            }
+
+            line: {
+              height: div(rem(23px), $headline-3-mobile);
+            }
+
+            @include media-breakpoint-up(lg) {
+              font: {
+                size: $headline-3;
+              }
+
+              line: {
+                height: div(rem(32px), $headline-3);
+              }
+            }
+          }
+
+          .blockquote {
+            font: {
+              size: $subtittle-card-mobile;
+            }
+
+            line: {
+              height: div(1.25rem, $subtittle-card-mobile);
+            }
+
+            margin: {
+              bottom: 1.25rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+              font: {
+                size: $sublheadline-2;
+              }
+
+              line: {
+                height: div(rem(30px), $sublheadline-2);
+              }
+
+              margin: {
+                top: 1.25rem !important;
+              }
+            }
+          }
+
+          .creator-comment {
+            gap: 0 0.75rem;
+
+            span {
+              &:first-child {
+                width: rem(26px);
+                height: 2px;
+              }
+            }
+
+            span {
+              &:last-child {
+                font: {
+                  size: $subheadline-1-mobile;
+                }
+
+                line: {
+                  height: div(rem(21px), $subheadline-1-mobile);
+                }
+
+                @include media-breakpoint-up(lg) {
+                  font: {
+                    size: $text-small;
+                  }
+
+                  line: {
+                    height: div(rem(24px), $text-small);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .request-reviews {
+          gap: 1rem 0;
+
+          margin: {
+            top: rem(43px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            gap: 0;
+
+            margin: {
+              top: rem(41px);
+            }
+          }
+
+          .request-quote {
+            .btn {
+              font: {
+                size: rem(14px);
+              }
+
+              line: {
+                height: div(2rem, rem(14px));
+              }
+
+              padding: 0.5rem 1rem;
+
+              @include media-breakpoint-up(lg) {
+                padding: 0.25rem 0.75rem;
+              }
+            }
+          }
+
+          .reviews {
+            span {
+              font: {
+                size: $subtittle-card-mobile;
+              }
+
+              line: {
+                height: div(1.25rem, $subtittle-card-mobile);
+              }
+
+              @include media-breakpoint-up(lg) {
+                font: {
+                  size: $text-small;
+                }
+
+                line: {
+                  height: div(1.5rem, $text-small);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .browse-pro {
+    margin: {
+      top: rem(28px);
+      bottom: rem(40px);
+    }
+  }
+
+  .first-row {
+    @include media-breakpoint-up(lg) {
+      margin-left: calc(calc(calc(calc(100vw - 960px) * 8) / 12) * -1);
+      margin-right: calc(calc(calc(calc(100vw - 960px) * 8) / 12) * 1);
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: calc(calc(calc(calc(100vw - 1140px) * 8) / 12) * -1);
+      margin-right: calc(calc(calc(calc(100vw - 1140px) * 8) / 12) * 1);
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-left: calc(calc(calc(calc(100vw - 1320px) * 8) / 12) * -1);
+      margin-right: calc(calc(calc(calc(100vw - 1320px) * 8) / 12) * 1);
+    }
+
+    .design-one {
+      right: rem(172.5px);
+      top: calc(rem(115px) - rem(57.9764px));
+    }
+
+    .design-two {
+      right: 0;
+      bottom: calc(28.5px);
+    }
+  }
+}
+
+/* End The Best Rated Section */
+/* Star The How Work Section */
+.how-work {
+  padding: {
+    top: $gap-section;
+    bottom: $gap-section;
+  }
+
+  .demo {
+    .video {
+      @include backdrop-filter(blur, rem(10px));
+
+      top: rem(83px);
+      width: calc(100% - 1.5rem);
+
+      video {
+        object: {
+          fit: cover;
+        }
+
+        aspect: {
+          ratio: 1.02;
+        }
+
+        filter: drop-shadow(0px 20px 50px rgba(5, 9, 19, 0.1));
+      }
+    }
+  }
+
+  .text {
+    @include media-breakpoint-up(lg) {
+      padding: {
+        top: calc(rem(83px) + 0.5rem);
+      }
+    }
+
+    .head-section {
+      .description {
+        margin: {
+          top: 0.75rem;
+          bottom: rem(28px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          margin: {
+            top: 1.25rem;
+            bottom: rem(52px);
+          }
+        }
+      }
+    }
+
+    .info {
+      gap: 0 rem(53px);
+
+      @include media-breakpoint-up(lg) {
+        gap: 0 rem(60px);
+      }
+
+      strong {
+        font: {
+          size: $headline-1-mobile;
+        }
+
+        line: {
+          height: div(rem(38px), $headline-1-mobile);
+        }
+
+        letter: {
+          spacing: $letter-spacing;
+        }
+
+        @include media-breakpoint-up(lg) {
+          font: {
+            size: $headline-2;
+          }
+
+          line: {
+            height: div(rem(55px), $headline-2);
+          }
+        }
+      }
+
+      p {
+        font: {
+          size: $subtittle-card-mobile;
+        }
+
+        line: {
+          height: div(1.25rem, $subtittle-card-mobile);
+        }
+
+        @include media-breakpoint-up(lg) {
+          font: {
+            size: rem(14px);
+          }
+
+          line: {
+            height: div(rem(24px), rem(14px));
+          }
+        }
+      }
+    }
+
+    .btn {
+      margin: {
+        top: rem(45px);
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: {
+          top: rem(48px);
+        }
+      }
+    }
+  }
+}
+
+/* End The How Work Section */
+/* Start The About Us Section */
+.about-us {
+  .container {
+    padding: {
+      bottom: rem(81px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: {
+        bottom: rem(132px);
+      }
+    }
+  }
+
+  .head-section {
+    .description {
+      margin: {
+        top: 0.75rem;
+        bottom: 2rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: {
+          top: 1.25rem;
+          bottom: rem(57px);
+        }
+      }
+    }
+  }
+
+  .video {
+    padding: rem(6px 5px);
+    @include backdrop-filter(blur, rem(10px));
+
+    video {
+      object: {
+        fit: cover;
+      }
+
+      aspect: {
+        ratio: 1.63;
+      }
+
+      filter: drop-shadow(0px 20px 50px rgba(5, 9, 19, 0.1));
+
+      @include media-breakpoint-up(lg) {
+        aspect: {
+          ratio: 2.07;
+        }
+      }
+    }
+  }
+
+  .design-one {
+    top: rem(26px);
+    left: rem(calc(calc(184px / 2) * -1));
+    z-index: -1;
+
+    @include media-breakpoint-up(lg) {
+      left: 0;
+    }
+  }
+
+  .design-two {
+    right: rem(calc(calc(184px / 2) * -1));
+    z-index: -1;
+
+    @include media-breakpoint-up(lg) {
+      right: 0;
+    }
+  }
+}
+
+/* End The About Us Section */
+/* Start The Join Now Section */
+.join-now {
+  padding: {
+    top: $gap-section;
+    bottom: rem(85px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: {
+      top: calc($gap-section * 2);
+      bottom: $gap-section;
+    }
+  }
+
+  .container {
+    box: {
+      shadow: 0px 20px 80px 4px rgba(5, 9, 19, 0.05);
+    }
+
+    .head-section {
+      padding: {
+        bottom: rem(84px);
+        top: rem(52px);
+        left: 1.25rem;
+        right: 1.25rem;
+      }
+
+      z-index: 10;
+
+      .title {
+        @include media-breakpoint-up(lg) {
+          font: {
+            size: rem(40px);
+          }
+
+          line: {
+            height: div(rem(60px), rem(40px))
+          }
+        }
+      }
+
+      .btn {
+        margin: {
+          top: rem(40px);
+        }
+      }
+    }
+
+    .image {
+      overflow: hidden;
+
+      img {
+        margin: {
+          bottom: -26%;
+        }
+      }
+    }
+  }
+}
+
+/* End The Join Now Section */

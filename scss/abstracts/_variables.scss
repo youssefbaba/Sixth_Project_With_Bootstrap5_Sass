@@ -5,6 +5,11 @@ $color-asset-1 :#36858d;
 $color-asset-2 :#F0E2CE;
 $color-black-50 :rgba(2, 22, 51, 0.5);
 $emptiness : #fcfcfc;
+$white-40 : rgba(#fff, 0.4);
+$white-80 : rgba(#fff, 0.8);
+$lynx-white : #f7f7f7;
+$embracing : #24694f;
+$midwinter-fire :#dd1700;
 
 
 /* Font Weight */
@@ -35,6 +40,7 @@ $headline-3-mobile: 0.88rem;
 
 /* Border Radius */
 $border-radius-5 : rem(5px);
+$border-radius-10 : rem(10px);
 
 
 $gap-section : rem(100px);
@@ -43,9 +49,12 @@ $gap-section : rem(100px);
 /* Map For Creating Background Colors */
 $map-bg-colors:(background-color:$background-color,
   emptiness : $emptiness,
+  white-40 :$white-40,
+  white-80 :$white-80,
+  lynx-white : $lynx-white,
 );
-
 
 /* Map For Creating Text Colors */
 $map-text-colors:(color-black-50:$color-black-50,
-)
+  embracing :$embracing,
+  midwinter-fire :$midwinter-fire, )
